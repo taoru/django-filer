@@ -22,7 +22,7 @@ if not filer_settings.FILER_IMAGE_MODEL:
     class Image(BaseImage):
         date_taken = models.DateTimeField(_('date taken'), null=True, blank=True,
                                           editable=False)
-        author = models.CharField(_('author'), max_length=255, null=True, blank=True)
+        author = models.CharField(_('author'), max_length=191, null=True, blank=True)
         must_always_publish_author_credit = models.BooleanField(_('must always publish author credit'), default=False)
         must_always_publish_copyright = models.BooleanField(_('must always publish copyright'), default=False)
 
