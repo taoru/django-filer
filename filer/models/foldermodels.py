@@ -12,7 +12,7 @@ from django.db.models import Q
 from django.utils.http import urlquote
 from django.utils.translation import ugettext_lazy as _
 
-from . import mixins
+from filer.models.mixins import IconsMixin
 from .. import settings as filer_settings
 from ..utils.compatibility import python_2_unicode_compatible
 
@@ -84,7 +84,7 @@ class FolderPermissionManager(models.Manager):
 
 
 @python_2_unicode_compatible
-class Folder(models.Model, mixins.IconsMixin):
+class Folder(models.Model, IconsMixin):
     """
     Represents a Folder that things (files) can be put into. Folders are *NOT*
     mirrored in the Filesystem and can have any unicode chars as their name.
