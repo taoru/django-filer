@@ -11,7 +11,7 @@ from django.core.files.base import ContentFile
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from . import mixins
+from filer.models.mixins import IconsMixin
 from .. import settings as filer_settings
 from ..fields.multistorage_file import MultiStorageFileField
 from ..utils.compatibility import LTE_DJANGO_1_7, python_2_unicode_compatible
@@ -40,7 +40,7 @@ class FileManager(PolymorphicManager):
 
 
 @python_2_unicode_compatible
-class File(PolymorphicModel, mixins.IconsMixin):
+class File(PolymorphicModel, IconsMixin):
     file_type = 'File'
     _icon = "file"
     folder = models.ForeignKey(Folder, verbose_name=_('folder'), related_name='all_files',
