@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 import filer.fields.multistorage_file
-import filer.models.mixins
+from filer.models.mixins import IconsMixin
 from filer.settings import FILER_IMAGE_MODEL
 from django.conf import settings
 
@@ -59,7 +59,7 @@ class Migration(migrations.Migration):
                 'verbose_name': 'file',
                 'verbose_name_plural': 'files',
             },
-            bases=(models.Model, filer.models.mixins.IconsMixin),
+            bases=(models.Model, IconsMixin),
         ),
         migrations.CreateModel(
             name='Folder',
@@ -82,7 +82,7 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Folders',
                 'permissions': (('can_use_directory_listing', 'Can use directory listing'),),
             },
-            bases=(models.Model, filer.models.mixins.IconsMixin),
+            bases=(models.Model, IconsMixin),
         ),
         migrations.CreateModel(
             name='FolderPermission',
