@@ -37,8 +37,8 @@ class BaseImage(File):
     _height = models.IntegerField(null=True, blank=True)
     _width = models.IntegerField(null=True, blank=True)
 
-    default_alt_text = models.CharField(_('default alt text'), max_length=255, blank=True, null=True)
-    default_caption = models.CharField(_('default caption'), max_length=255, blank=True, null=True)
+    default_alt_text = models.CharField(_('default alt text'), max_length=191, blank=True, null=True)
+    default_caption = models.CharField(_('default caption'), max_length=191, blank=True, null=True)
 
     subject_location = models.CharField(_('subject location'), max_length=64, blank=True,
                                         default='')
