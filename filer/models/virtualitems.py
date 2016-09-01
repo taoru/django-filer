@@ -5,13 +5,13 @@ from __future__ import absolute_import
 from django.core import urlresolvers
 from django.utils.translation import ugettext_lazy as _
 
-from . import mixins
+from filer.models.mixins import IconsMixin
 from .. import settings as filer_settings
 from .filemodels import File
 from .foldermodels import Folder
 
 
-class DummyFolder(mixins.IconsMixin):
+class DummyFolder(IconsMixin):
     file_type = 'DummyFolder'
     name = "Dummy Folder"
     is_root = True
