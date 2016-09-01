@@ -45,15 +45,15 @@ class File(PolymorphicModel, IconsMixin):
     _icon = "file"
     folder = models.ForeignKey(Folder, verbose_name=_('folder'), related_name='all_files',
         null=True, blank=True)
-    file = MultiStorageFileField(_('file'), null=True, blank=True, max_length=255)
+    file = MultiStorageFileField(_('file'), null=True, blank=True, max_length=191)
     _file_size = models.IntegerField(_('file size'), null=True, blank=True)
 
     sha1 = models.CharField(_('sha1'), max_length=40, blank=True, default='')
 
     has_all_mandatory_data = models.BooleanField(_('has all mandatory data'), default=False, editable=False)
 
-    original_filename = models.CharField(_('original filename'), max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, default="", blank=True,
+    original_filename = models.CharField(_('original filename'), max_length=191, blank=True, null=True)
+    name = models.CharField(max_length=191, default="", blank=True,
         verbose_name=_('name'))
     description = models.TextField(null=True, blank=True,
         verbose_name=_('description'))
